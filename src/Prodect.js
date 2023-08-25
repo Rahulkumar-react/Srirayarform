@@ -34,7 +34,6 @@ function Prodect() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
 
-
   const handleInputChange = (event) => {
     const input = event.target.value;
     const strippedInput = input.replace(/\D/g, "").slice(0, 10);
@@ -50,7 +49,10 @@ function Prodect() {
     const value = event.target.value;
     const strippedInput = value.replace(/\D/g, "").slice(0, 2);
     if (strippedInput.length > 0) {
-      const formattedPassedYear = `${strippedInput.slice(0,3)}%${strippedInput.slice(2)}`;
+      const formattedPassedYear = `${strippedInput.slice(
+        0,
+        3
+      )}%${strippedInput.slice(2)}`;
       setPercentage(formattedPassedYear);
     }
   };
@@ -96,7 +98,7 @@ function Prodect() {
           icon: "success",
           title: "Successfully Added",
           showConfirmButton: false,
-          timer: 1000,
+          timer: 2000,
         });
         setFiles("");
         setSSLCPercentage("");
@@ -115,7 +117,7 @@ function Prodect() {
       Swal.fire({
         icon: "error",
         title: "SomeThing went worng",
-        timer:1000,
+        timer: 2000,
       });
     }
   };
@@ -125,6 +127,9 @@ function Prodect() {
     borderRadius: "8px",
     borderTop: 10,
     borderColor: " #00008B",
+    "@media(max-width:600px)": {
+      width: "100%",
+    },
   };
   const Boxstyle2 = {
     height: "15vh",
@@ -326,6 +331,7 @@ function Prodect() {
                 </Button>
               </Box>
             </Box>
+            <br />
             {/* <>
           {' '}
           <Dialog open={selecterrorpage} onClose={handleCloseErrorModal}>
@@ -357,6 +363,7 @@ function Prodect() {
           </Card>
         </Grid>
       </Grid>
+      <br />
     </>
   );
 }
